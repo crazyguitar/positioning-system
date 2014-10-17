@@ -20,9 +20,7 @@ Connect central server, reference node(access point) and mobile to same switch.
 
 <!--
 
-time ---->
 					      Send Packet
-                             ---->
 ______________________________________________________________ Mobile node(TX)
 \					        /     \                    /
  \					       /       \                  /
@@ -34,7 +32,6 @@ ____\___________________/_____________\____________/__________ Central Server
    STARTRECV  ACKFORSTART            STOPRECV  ACKFORSTOP 
         \        ////					  \    /
 _________\______////_______________________\__/_______________ Reference node(AP)
-           ---->   
 		  Prepare
 
 -->
@@ -62,14 +59,12 @@ Reference Node need execute in order.
 
 <!-- 
 							  SCP get log file
-                                   ----->
 ______________________________________________
 \                  ////           /      /
  \                ////           /      /
  SYNC    ACK_FOR_END_COLLECT    / .... /
    \            ////           /      /
 ____\__________////___________/______/________
-     --------->
   Refer collect CSI
 -->
 
