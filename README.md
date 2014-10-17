@@ -45,13 +45,13 @@ Reference Node need execute in order.
 
 1. For Central Server:
 <pre><code>	# ./central_sync_server.py <ip_address> <port> <num_ap> 
-	./central_sync_server.py 10.8.0.27 5566 4
+./central_sync_server.py 10.8.0.27 5566 4
 </code></pre>
 	
 2. For Reference Node:
 	
-<pre><code># sudo ./reference_sync.py <server_ip> <server_port> <ap_id>
-	sudo ./reference_sync.py 10.8.0.27 5566 1 
+<pre><code> # sudo ./reference_sync.py <server_ip> <server_port> <ap_id>
+sudo ./reference_sync.py 10.8.0.27 5566 1 
 </code></pre>
 
 3. For Mobile Node: 
