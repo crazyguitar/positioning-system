@@ -5,17 +5,24 @@
 Connect central server, reference node(access point) and mobile to same switch.  
 
 1. For Central Server:
-<pre><code>./central_start.sh
-</code></pre>
+<code>
+./central_start.sh
+</code>
 
 2. For Reference Node:
-<pre><code>sudo ./reference_start.sh 
+<code>
+sudo ./reference_start.sh 
 sudo ./reference.py 10.8.0.27 5566
-</code></pre>
+</code>
+
 3. For Mobile Node: 
-<pre><code>sudo ./mobile_start.sh	
+
+<code>
+sudo ./mobile_start.sh	
 sudo ./mobile.py 10.8.0.27 5566
-</code></pre>
+</code>
+
+
 <!--
 
 					      Send Packet
@@ -42,19 +49,23 @@ Connect central server, reference node(access point) and mobile to same switch.
 Reference Node need execute in order. 
 
 1. For Central Server:
-<pre><code># ./central_sync_server.py &lt;ip_address&gt; &lt;port&gt; &lt;num_ap&gt; 
+
+<code>
+# ./central_sync_server.py &lt;ip_address&gt; &lt;port&gt; &lt;num_ap&gt; 
 ./central_sync_server.py 10.8.0.27 5566 4
-</code></pre>
+</code>
 	
 2. For Reference Node:
 	
-<pre><code># sudo ./reference_sync.py &lt;server_ip&gt; &lt;server_port&gt; &lt;ap_id&gt;
+<code>
+# sudo ./reference_sync.py &lt;server_ip&gt; &lt;server_port&gt; &lt;ap_id&gt;
 sudo ./reference_sync.py 10.8.0.27 5566 1 
-</code></pre>
+</code>
 
 3. For Mobile Node: 
-<pre><code>./mobile_tx.sh
-</code></pre>
+<code>
+./mobile_tx.sh
+</code>
 
 <!-- 
 							  SCP get log file
