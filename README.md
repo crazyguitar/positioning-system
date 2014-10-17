@@ -35,6 +35,7 @@ _________\______////_______________________\__/_______________ Reference node(AP
 		  Prepare
 
 -->
+
 ## Testing Phase
 
 ### Experiment setup 
@@ -45,11 +46,13 @@ Reference Node need execute in order.
 1. For Central Server:
 	
 	# ./central_sync_server.py <ip_address> <port> <num_ap> 
+
 	./central_sync_server.py 10.8.0.27 5566 4
 	
 2. For Reference Node:
 	
 	# sudo sudo ./reference_sync.py <server_ip> <server_port> <ap_id>
+
 	sudo ./reference_sync.py 10.8.0.27 5566 1 
 
 3. For Mobile Node: 
