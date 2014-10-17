@@ -10,12 +10,12 @@ Connect central server, reference node(access point) and mobile to same switch.
 
 2. For Reference Node:
 
-	sudo ./reference_start.sh \\ 
+	sudo ./reference_start.sh <br /> 
 	sudo ./reference.py 10.8.0.27 5566
 
 3. For Mobile Node: 
 
-	sudo ./mobile_start.sh	\\
+	sudo ./mobile_start.sh	<br />
 	sudo ./mobile.py 10.8.0.27 5566
 
 
@@ -46,12 +46,12 @@ Reference Node need execute in order.
 
 1. For Central Server:
 
-	// ./central_sync_server.py &lt;ip_address&gt; &lt;port&gt; &lt;num_ap&gt; \\
+	// ./central_sync_server.py &lt;ip_address&gt; &lt;port&gt; &lt;num_ap&gt; <br />
 	./central_sync_server.py 10.8.0.27 5566 4
 	
 2. For Reference Node:
 	
-	// sudo ./reference_sync.py &lt;server_ip&gt; &lt;server_port&gt; &lt;ap_id&gt; \\
+	// sudo ./reference_sync.py &lt;server_ip&gt; &lt;server_port&gt; &lt;ap_id&gt; <br />
 	sudo ./reference_sync.py 10.8.0.27 5566 1 
 
 3. For Mobile Node: 
