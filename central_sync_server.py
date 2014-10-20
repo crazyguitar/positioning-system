@@ -6,6 +6,7 @@ from thread import *
 import time
 import subprocess
 import shlex
+import os
 
 ACK = [0]*int(sys.argv[3])
 
@@ -67,9 +68,12 @@ def main():
 
 		while(sum(ACK) != int(sys.argv[3])):
 			pass
-
+		
 		ACK = [0]*int(sys.argv[3])
-
+		
+		log_file_list = os.listdir('../tmp/')
+		while(len(log_file_list)!=0):
+			log_file_list = os.listdir('../tmp/')
 
 
 if __name__ == "__main__":

@@ -27,7 +27,7 @@ class syncClient:
 		command = "sudo ../netlink/log_to_file online/log%d.dat" % (ap_id)
 		args = shlex.split(command) 
 		self.p = subprocess.Popen(args, stdout=subprocess.PIPE)
-		time.sleep(3)
+		time.sleep(1.5)
 	
 	def send_ACK_to_sync_server(self):
 		
