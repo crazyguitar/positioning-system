@@ -109,6 +109,6 @@ ____\__________////___________/______/________
 
 	This is a testing function of matlab 
 
-All above files need to put into linux-80211n-csitool-supplement/matlab
+All above files need to put into /path/to/linux-80211n-csitool-supplement/matlab
 
 
