@@ -51,7 +51,7 @@ Reference Node need execute in order.
 	
 2. For Reference Node:
 	
-	sudo ./reference_start.sh
+	sudo ./reference_start.sh <br />
 	// sudo ./reference_sync.py &lt;server_ip&gt; &lt;server_port&gt; &lt;ap_id&gt; <br />
 	sudo ./reference_sync.py 10.8.0.27 5566 1 
 
