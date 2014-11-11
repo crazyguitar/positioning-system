@@ -22,7 +22,7 @@ $ sudo ./mobile_start.sh
 $ sudo ./mobile.py 10.8.0.27 5566
 ```
 
-<!--
+```
 
 					      Send Packet
 ______________________________________________________________ Mobile node(TX)
@@ -38,11 +38,6 @@ ____\___________________/_____________\____________/__________ Central Server
 _________\______////_______________________\__/_______________ Reference node(AP)
 		  Prepare
 
--->
-```sequence
-Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!
 ```
 
 ## Testing Phase
