@@ -31,6 +31,7 @@ class MobileClient:
 		self.sock.send("SENDOVER")
 		# wait for ack
 		recv_msg = self.sock.recv(256)
+		print recv_msg
 		self.sock.close()
 
 

@@ -40,6 +40,25 @@ class syncClient:
 	def end_collect(self):
 		self.p.terminate()
 		print self.p.communicate()[0]
+
+	def recv_est_end(self):
+		recv_msg = self.sock.recv(256)
+		print recv_msg
+
+	def remove_log_file(self, ap_id):
+		# remove log file
+		command = "sudo rm -rf online/log%d.dat" % (ap_id)
+		print command
+		args = shlex.split(command)
+		subprocess.call(args)
+	
+	def send_est_end_ack(self):
+
+		try:
+			self.sock.send("ACK_FOR_ESTIMATE_END")
+		except socket.error, e:
+			print "error = %s" % e
+			sys.exit(1)
 	
 
 def main():
@@ -62,6 +81,15 @@ def main():
 
 		# send ACK to sync server 
 		refer.send_ACK_to_sync_server()
+		
+		# recv download end msg
+		refer.recv_est_end()
+		
+		# remove log file
+		refer.remove_log_file(ap_id)
+
+		# send download end ack to syn server
+		refer.send_est_end_ack()
 
 	refer.sock.close()
 

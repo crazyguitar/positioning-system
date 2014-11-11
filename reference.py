@@ -44,6 +44,24 @@ class ReferenceNode:
 		except socket.error, e:
 			print "error = %s" %e
 			sys.exit(1)
+	
+	def recv_remove_log_msg(self):
+
+		recv_msg = self.sock.recv(256)
+		print recv_msg
+	
+	def send_remove_ack(self):
+		try:
+			self.sock.send("REMOVELOGACK")
+		except socket.error, e :
+			print "error = %s" % e
+			sys.exit(1)
+
+	def remove_log(self, current_count):
+		
+		command = "sudo rm -rf tmp/log%d.dat" % (current_count)
+		args = shlex.split(command)
+		subprocess.call(args)
 		
 def main():
 
@@ -55,6 +73,15 @@ def main():
 		print current_count
 		refer.recv_start_command(current_count)
 		refer.recv_stop_command()
+
+		# recv msg to remove log file
+		refer.recv_remove_log_msg()
+
+		# remove log file
+		refer.remove_log(current_count)
+
+		# send ack to central to notify that the log file has been removed
+		refer.send_remove_ack()
 
 	refer.sock.close()
 

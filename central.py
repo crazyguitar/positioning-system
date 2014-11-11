@@ -2,6 +2,8 @@
 
 import socket
 import sys
+import subprocess
+import shlex
 
 
 class CentralServer:
@@ -24,6 +26,9 @@ class conn_client:
 	
 	def send_stop_recv(self):
 		self.conn.send("STOPRECV")
+	
+	def send_remove_log(self):
+		self.conn.send("REMOVELOG")
 
 class mobi_client:
 
@@ -37,6 +42,14 @@ class mobi_client:
 
 	def send_command(self, command):
 		self.conn.send(command)
+		
+def download_log_file(ap, count, index):
+
+	command = "scp mvnl@%s:~/linux-80211n-csitool-supplementary/lab_pos/tmp/log%d.dat ../log_file/AP%d" % (ap.addr[0], count , index)
+	print command
+	args = shlex.split(command)
+	subprocess.call(args)
+	
 
 def main():
 
@@ -50,12 +63,13 @@ def main():
 		connect_number += 1
 		print 'Node: '+str(connect_number)+' connected'
 	
-	
+	count = 96 
 	while True: 
 			
 		connect, address = server.sock.accept()
 		mobileNode = mobi_client(connect, address)
 		print "Mobile Node Connected!"
+		count += 1
 
 		# Get ready 
 		recv_msg = mobileNode.recv_command()
@@ -75,7 +89,20 @@ def main():
 			recv_ack = ap.conn.recv(256)
 			# Recv ACK
 			print recv_ack
-		mobileNode.send_command("ALLSTOP")
+
+		# grab log file from all access point
+		for i in range(len(clientList)):
+			download_log_file(clientList[i], count, i+1)
+
+		# send remove log file
+		for ap in clientList:
+			ap.send_remove_log()
+			recv_ack = ap.conn.recv(256)
+			# Recv ACK
+			print recv_ack
+		
+		ACK_msg = "ALLSTOP Times: %d" % (count)
+		mobileNode.send_command(ACK_msg)
 		mobileNode.conn.close()
 	
 	server.sock.close()
