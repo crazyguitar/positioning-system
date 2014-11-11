@@ -39,6 +39,11 @@ _________\______////_______________________\__/_______________ Reference node(AP
 		  Prepare
 
 -->
+```sequence
+Alice->Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob-->Alice: I am good thanks!
+```
 
 ## Testing Phase
 
