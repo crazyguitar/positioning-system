@@ -6,18 +6,21 @@ Connect central server, reference node(access point) and mobile to same switch.
 
 1. For Central Server:
 
-	./central_start.sh
+```bash
+$ ./central_start.sh
+```
 
 2. For Reference Node:
-
-	sudo ./reference_start.sh <br /> 
-	sudo ./reference.py 10.8.0.27 5566
+```bash
+$ sudo ./reference_start.sh
+$ sudo ./reference.py 10.8.0.27 5566
+```
 
 3. For Mobile Node: 
-
-	sudo ./mobile_start.sh	<br />
-	sudo ./mobile.py 10.8.0.27 5566
-
+```bash
+$ sudo ./mobile_start.sh
+$ sudo ./mobile.py 10.8.0.27 5566
+```
 
 <!--
 
