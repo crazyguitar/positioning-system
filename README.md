@@ -12,13 +12,17 @@ $ ./central_start.sh
 
 2. For Reference Node:
 ```bash
-$ sudo ./reference_start.sh
+$ ./reference_start.sh
+
+# sudo .reference.py <ip address> <port>
 $ sudo ./reference.py 10.8.0.27 5566
 ```
 
 3. For Mobile Node: 
 ```bash
-$ sudo ./mobile_start.sh
+$ ./mobile_start.sh
+
+# sudo ./mobile.py <ip address> <port>
 $ sudo ./mobile.py 10.8.0.27 5566
 ```
 4. Protocol flow chart
