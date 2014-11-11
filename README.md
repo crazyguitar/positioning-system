@@ -48,10 +48,10 @@ Connect central server, reference node(access point) and mobile to same switch.
 Reference Node need execute in order. 
 
 1. For Central Server:
-
-	// ./central_sync_server.py &lt;ip_address&gt; &lt;port&gt; &lt;num_ap&gt; <br />
-	./central_sync_server.py 10.8.0.27 5566 4
-	
+```
+# ./central_sync_server.py <ip address> <port> <num_ap>
+$ ./central_sync_server.py 10.8.0.27 5566 4
+```	
 2. For Reference Node:
 	
 	sudo ./reference_start.sh <br />
