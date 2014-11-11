@@ -21,21 +21,21 @@ $ sudo ./reference.py 10.8.0.27 5566
 $ sudo ./mobile_start.sh
 $ sudo ./mobile.py 10.8.0.27 5566
 ```
-
+4. Protocol flow chart
 ```
 
 					      Send Packet
-______________________________________________________________ Mobile node(TX)
-\					        /     \                    /
- \					       /       \                  /
-GETREADY	            READY    SENDOVER         ALLSTOP
-   \				     /           \              /
-____\___________________/_____________\____________/__________ Central Server
-     \			    ////			   \          /
-      \		  	   ////				    \        /
-   STARTRECV  ACKFORSTART            STOPRECV  ACKFORSTOP 
-        \        ////					  \    /
-_________\______////_______________________\__/_______________ Reference node(AP)
+__________________________________________________________________________________ Mobile node(TX)
+\					        /     \                                               /
+ \					       /       \											 /
+GETREADY	            READY    SENDOVER                                   ALLSTOP
+   \				     /           \                                         /
+____\___________________/_____________\_______________________________________/__ Central Server
+     \			    ////			   \          /     \         \          /
+      \		  	   ////				    \        /       \         \        /
+   STARTRECV  ACKFORSTART           STOPRECV  ACKFORSTOP FETCH log RM_LOG ACK
+        \        ////					  \    /           \         \    /
+_________\______////_______________________\__/_____________\_________\__/_______ Reference node(AP)
 		  Prepare
 
 ```
@@ -66,7 +66,8 @@ $ sudo ./reference_sync.py 10.8.0.27 5566 1
 $ ./mobile_tx.sh
 ```
 
-<!-- 
+4. protocol flow chart
+```
 							  SCP get log file
 ______________________________________________
 \                  ////           /      /
@@ -76,7 +77,7 @@ ______________________________________________
 ____\__________////___________/______/________
   Refer collect CSI
 
--->
+```
 
 ## Matlab Processing data
 
